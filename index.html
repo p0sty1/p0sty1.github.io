@@ -38,7 +38,6 @@
       padding: 20px;
       color: #888;
     }
-    /* 为 Markdown 内容添加基本样式 */
     #markdown-content h1, #markdown-content h2, #markdown-content h3 {
       color: #34495e;
     }
@@ -50,6 +49,11 @@
     }
     #markdown-content em {
       font-style: italic;
+    }
+    iframe {
+      border: none;
+      margin-top: 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -69,9 +73,19 @@
   <!-- Markdown 内容将渲染在此 -->
   <div id="markdown-content"></div>
 
+  <h2>完整报告下载</h2>
+  <p>
+    👉 <a href="pdf/Q2-2报告.pdf" target="_blank">点击查看 PDF 报告：Q2-2报告.pdf</a>
+  </p>
+
+  <h2>PDF 预览</h2>
+  <iframe src="pdf/Q2-2报告.pdf" width="100%" height="600px">
+    您的浏览器不支持 PDF 预览，请点击<a href="pdf/Q2-2报告.pdf" target="_blank">这里下载</a>。
+  </iframe>
+
   <h2>项目说明</h2>
   <p>
-    本站点由 GitHub Pages 托管，并绑定了我的个人自定义域名jyangb1y.chat。
+    本站点由 GitHub Pages 托管，并绑定了我的个人自定义域名 jyangb1y.chat。
   </p>
 </main>
 
@@ -80,14 +94,10 @@
 </footer>
 
 <script>
-  // 示例 Markdown 内容（可替换为你的实际内容）
   const markdownText = `
 # 电信客户流失生存分析报告
-##sdadasdasddddddddddddd
 **分析工具**：PySpark、Seaborn、Matplotlib
   `;
-
-  // 使用 marked 渲染 Markdown 到 HTML
   document.getElementById('markdown-content').innerHTML = marked.parse(markdownText);
 </script>
 
