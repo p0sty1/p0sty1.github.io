@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>我的数据分析博客</title>
+  <!-- 引入 marked 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     body {
       font-family: "微软雅黑", sans-serif;
@@ -36,6 +38,19 @@
       padding: 20px;
       color: #888;
     }
+    /* 为 Markdown 内容添加基本样式 */
+    #markdown-content h1, #markdown-content h2, #markdown-content h3 {
+      color: #34495e;
+    }
+    #markdown-content p {
+      margin: 10px 0;
+    }
+    #markdown-content strong {
+      font-weight: bold;
+    }
+    #markdown-content em {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -48,13 +63,11 @@
 <main>
   <h2>数据分析报告</h2>
   <p>
-    <!-- 你可以在此处粘贴或撰写你的报告内容 -->
     以下是我完成的任务 (2) 的数据分析报告内容：
   </p>
 
-  <p>
-    [你的报告内容]
-  </p>
+  <!-- Markdown 内容将渲染在此 -->
+  <div id="markdown-content"></div>
 
   <h2>项目说明</h2>
   <p>
@@ -64,8 +77,25 @@
 </main>
 
 <footer>
-  &copy; 2025 我的个人博客 | Powered by GitHub Pages
+  © 2025 我的个人博客 | Powered by GitHub Pages
 </footer>
+
+<script>
+  // 示例 Markdown 内容（可替换为你的实际内容）
+  const markdownText = `
+# 分析报告标题
+这是我的数据分析报告，包含以下内容：
+
+- **数据来源**：从公开数据集获取。
+- **分析工具**：使用了 Python 和 Pandas。
+- **结论**：数据表明趋势向上。
+
+更多细节请参考完整报告。
+  `;
+
+  // 使用 marked 渲染 Markdown 到 HTML
+  document.getElementById('markdown-content').innerHTML = marked.parse(markdownText);
+</script>
 
 </body>
 </html>
